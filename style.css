@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color:rgb(113, 113, 230);
+    padding: 10px;
+}
+.container{
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    height: auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    overflow: hidden;
+}
+.container form{
+    min-height: 500px;
+    margin-top: 10px;
+}
+
+.container form .formtwo{
+    opacity:0;
+    pointer-events: none;
+    background-color: white;
+    position: absolute;
+    transform: translateX(100%);
+    transition: 0.3s ease;
+}
+.container form .formone{
+    opacity: 1;
+    position: absolute;
+    transform: translateX(0);
+    transition: 0.3s ease;
+}
+
+
+.container .active .formtwo{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+    transition: 0.3s ease;
+
+}
+.container .active .formone{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+    transition: 0.3s ease;
+
+}
+
+
+/* .active .formone{
+    
+} */
+
+ /* .active .formtwo{
+   
+} */
+
+.container h1{
+    position: relative;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+.container h1::before{
+content: "";
+position: absolute;
+width:40px ;
+height: 3px;
+background-color: blue;
+bottom: -5px;
+left: 0;
+}
+.container form .title{
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(90, 82, 82);
+}
+.container form .fields{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 10px;
+}
+.fields .detail  label{
+    display: block;
+    margin-bottom: 8px;
+    color: rgb(130, 122, 122);
+}
+form .fields .detail {
+    width:30%;  
+    height: 45px;  
+    margin-bottom: 20px;
+}
+ .fields .detail input{
+    cursor: pointer;
+    padding-left: 20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    outline: none;
+}
+.fields .detail input:is(:focus,:valid){
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+    transition: all 0.2s ease;
+
+}
+.ID{
+    margin: 40px 0;
+}
+form button{
+    margin-top: 10px;
+    max-width:200px;
+    width: 100%;
+    color: white;
+    background-color: blue;
+    padding: 15px 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+form button:hover{
+    background-color: rgb(72, 72, 238);
+    transition: all 0.2s ease;
+}
+form button .fa{
+    margin-left: 6px;
+}
+form button .rs{
+    margin-right: 6px;
+}
+form .button{
+    margin-right: 15px;
+}
+.container #text{
+    position: absolute;
+    background-color: rgb(66, 60, 60);
+    color: white;
+    padding: 20px;
+    right: 0;
+    top: 0;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.10) ;
+    display: none;
+}
+@media(max-width:768px){
+    .container{
+        overflow-y: scroll;
+    }
+    form input{
+        margin-right: 10px;
+    }
+
+    form .fields .detail{
+        width: 47%;
+    }
+    form button{
+        margin-bottom: 30px;
+    }
+    .container form .fields{
+        gap: 18px;
+    }
+}
+@media(max-width:565px){
+    .container{
+        margin: 0 auto;
+    }
+    form .fields .detail{
+        width: 93%;
+    }
+    
+}
+@media(max-width:460px){
+    form .button{
+        display: block;
+        margin-left: 50px;
+    }
+    form .sumit{
+        margin-left: 50px;
+        margin-top: -50px;
+    }
+
+}
